@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- title -->
+  <title>Zaruri kam To Do List</title>
+
+  <!-- favicon -->
+  
+  <!-- vendor css -->
+  <link rel="stylesheet" href="./assets/css/fontawesome-6.css">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="./assets/css/custom.css">
+
+</head>
+<body>
+
+  <header>
+    <div class="head">
+      <div class="app_icon">
+        <img src="./assets/images/app-icon.png" alt="to-do-list">
+      </div>
+      <div class="app_name">
+        <h1 class="main_heading">Zaruri Kam</h1>
+        <p>To-Do-List</p>
+      </div>
+    </div>
+  </header>
+  <main class="main_parent">
+    <div class="tdl_wrap">
+      <div class="track_record">
+        <div class="date_track">
+          <div class="day_date main_heading"><span class="day">Thursday</span>,<span class="date">7</span></div>
+          <div class="year_month"><span class="month">March</span>,<span class="year">2024</span></div>
+        </div>
+        <div class="task_track">
+          <div class="t-task">
+            <div class="t-task-num">0</div>
+            <p>Total Task</p>
+          </div>
+          <div class="p-task">
+            <div class="p-task-num">0</div>
+            <p>Pending Task</p>
+          </div>
+          <div class="c-task">
+            <div class="c-task-num">0</div>
+            <p>Complete Task</p>
+          </div>
+        </div>
+      </div>
+      <div class="task_record">
+        <div class="input_box">
+          <input type="text" class="add_task" placeholder="Add task...">
+          <div class="add_btn">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div>
+        <div class="task_box" id="scrollable-div">
+          <ul class="task_list">
+            <li>
+              <div class="todo_content">
+                <span class="checkbox"></span>
+                <p>This could be the text here</p>
+              </div>
+              <div class="update_content">
+                <span class="task_date">11-03-2024</span>
+                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-pencil"></i>
+              </div>
+            </li>
+            <li>
+              <div class="todo_content">
+                <span class="checkbox"></span>
+                <p>This could be the text here</p>
+              </div>
+              <div class="update_content">
+                <span class="task_date">11-03-2024</span>
+                <i class="fa-solid fa-trash-can"></i>
+                <i class="fa-solid fa-pencil"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+
+  <!-- custom js -->
+  <script src="./assets/js/custom.js"></script>
+</body>
+</html>
