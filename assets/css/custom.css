@@ -74,7 +74,10 @@ ul, li {
   padding: 10px 20px;
   background: linear-gradient(90deg, hsla(177, 87%, 79%, 1) 0%, hsla(235, 89%, 70%, 1) 100%);
 }
-.year_month {
+.date_track span {
+  display: block;
+}
+.month {
   font-size: 13px;
 }
 .task_track {
