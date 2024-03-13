@@ -152,6 +152,20 @@ ul, li {
   margin-right: 10px;
   flex: none;
   cursor: pointer;
+  position: relative;
+}
+
+.tick::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border-width: 0 2px 2px 0;
+  border-color: #5a5a5a;
+  border-style: solid;
+  transform: rotate(45deg);
 }
 
 .task_list li {
@@ -165,6 +179,18 @@ ul, li {
   margin-bottom: 0px;
 }
 
+.edit_task_text {
+  border: none;
+  border-bottom: 1px solid #3b3b3b;
+  width: 100%;
+  flex: none;
+  background-color: transparent;
+}
+
+.edit_task_text:focus {
+  outline: none;
+}
+
 .update_content i {
   font-size: 14px;
   margin-left: 7px;
@@ -174,7 +200,10 @@ ul, li {
 .todo_content p {
   font-size: 14px;
 }
-
+.completed {
+  text-decoration: line-through;
+  color: #5f5f5fa3;
+}
 .task_date {
   font-size: 10px;
   margin-left: 7px;
