@@ -3,6 +3,9 @@ const inputValue = document.querySelector('.add_task');
 const inputBtn = document.querySelector('.add_btn');
 const taskList = document.querySelector('.task_list');
 
+let totalTask = 0;
+let pendingTask = 0;
+let completedTask = 0;
 
 //function for date
 const updatedDate = () => {
@@ -48,6 +51,8 @@ inputBtn.addEventListener('click', () => {
     const taskCurrentDate = new Date();
     addTask(taskText, taskCurrentDate.getDate(), taskCurrentDate.getMonth(), taskCurrentDate.getFullYear())
     inputValue.value = '';
+    updateTask();
+    displayTask();
   }
 })
 
@@ -57,6 +62,8 @@ taskList.addEventListener('click', (event) => {
   //delete
   if (event.target.classList.contains('del_task_btn')) {
     event.target.closest('li').remove();
+    updateTask();
+    displayTask();
   };
   //complete(done)
   if (event.target.classList.contains('checkbox')) {
@@ -64,6 +71,8 @@ taskList.addEventListener('click', (event) => {
     const taskContent = taskBox.querySelector('p');
     taskContent.classList.toggle('completed');
     event.target.classList.toggle('tick');
+    updateTask();
+    displayTask();
   }
   //edit task text
   if (event.target.classList.contains('edit_task_btn')) {
@@ -99,4 +108,19 @@ taskList.addEventListener('click', (event) => {
   }
 
 });
+
+const updateTask = () => {
+  totalTask = document.querySelectorAll('.task_list li').length;
+  pendingTask = document.querySelectorAll('.task_list li p:not(.completed)').length;
+  completedTask = document.querySelectorAll('.task_list li p.completed').length;
+}
+
+const displayTask = () => {
+  document.querySelector('.t-task-num').innerText = totalTask;
+  document.querySelector('.p-task-num').innerText = pendingTask;
+  document.querySelector('.c-task-num').innerText = completedTask;
+}
+
+updateTask();
+displayTask();
 
