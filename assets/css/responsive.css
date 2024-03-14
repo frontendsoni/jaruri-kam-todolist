@@ -1,0 +1,36 @@
+@media screen and (max-width:1024px) {
+  .tdl_wrap {
+    width: 70%;
+  }  
+}
+@media screen and (max-width:768px) {
+  .tdl_wrap {
+    width: 90%;
+  }  
+}
+@media screen and (max-width:576px) {
+  .tdl_wrap {
+    width: 97%;
+    border-radius: 15px;
+  }
+  .task_record {
+    padding: 10px;
+  }  
+  .task_list li {
+    padding: 8px;
+  }
+  .update_content i {
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .task_date {
+    margin-left: 5px;
+  }
+  .todo_content p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width:321px) {
+
+}

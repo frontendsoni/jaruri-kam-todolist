@@ -35,7 +35,7 @@ ul, li {
 /* header css */
 .head {
   width: 100%;
-  background-color: rgb(193, 251, 164);
+  background-color: rgb(144 218 244 / 90%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +63,6 @@ ul, li {
 }
 .tdl_wrap {
   width: 50%;
-  height: 75vh;
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(212, 212, 212, 0.5) 0px 5px 15px 0px, rgba(212, 212, 212, 0.3) 0px 5px 25px 0px;
   border-radius: 25px;
@@ -96,7 +95,7 @@ ul, li {
   width: 100%;
   border: 3px solid rgb(205, 205, 205);
   border-radius: 10px;
-  padding: 0px 10px;
+  padding: 0px 50px 0 10px;
   outline: none;
   font-family: var(--heading-font-family);
   font-weight: 500;
@@ -136,6 +135,10 @@ ul, li {
   border-radius: 10px;
   padding: 10px;
   font-family: var(--heading-font-family);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .todo_content {
@@ -168,13 +171,6 @@ ul, li {
   transform: rotate(45deg);
 }
 
-.task_list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
 .task_list li:last-child {
   margin-bottom: 0px;
 }
@@ -199,6 +195,7 @@ ul, li {
 
 .todo_content p {
   font-size: 14px;
+  word-break: break-word;
 }
 .completed {
   text-decoration: line-through;

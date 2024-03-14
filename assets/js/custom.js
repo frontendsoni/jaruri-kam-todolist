@@ -49,10 +49,12 @@ inputBtn.addEventListener('click', () => {
   const taskText = inputValue.value.trim();
   if (taskText) {
     const taskCurrentDate = new Date();
-    addTask(taskText, taskCurrentDate.getDate(), taskCurrentDate.getMonth(), taskCurrentDate.getFullYear())
+    addTask(taskText, taskCurrentDate.getDate(), taskCurrentDate.getMonth(), taskCurrentDate.getFullYear());
+    addTodoItem(taskText);
     inputValue.value = '';
     updateTask();
     displayTask();
+    getTodoList();
   }
 })
 
@@ -61,7 +63,10 @@ inputBtn.addEventListener('click', () => {
 taskList.addEventListener('click', (event) => {
   //delete
   if (event.target.classList.contains('del_task_btn')) {
-    event.target.closest('li').remove();
+    const listItem = event.target.closest('li');
+    const itemId = listItem.dataset.id;
+    deleteTodoItem(itemId);
+    listItem.remove(); // Remove the task from the UI
     updateTask();
     displayTask();
   };
@@ -124,3 +129,52 @@ const displayTask = () => {
 updateTask();
 displayTask();
 
+// to store the data in local storage
+
+// Function to save todo list data to local storage
+const saveTodoList = (todoList) => {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
+};
+
+// Function to get todo list data from local storage
+const getTodoList = () => {
+  const storedData = localStorage.getItem('todoList');
+  return storedData ? JSON.parse(storedData) : [];
+};
+
+// Function to add a new todo item to the list
+const addTodoItem = (todoText) => {
+  const todoDate = new Date();
+  const todoList = getTodoList();
+  const newItem = {
+    id: Date.now(),
+    text: todoText,
+    completed: false,
+    date: {
+      day:todoDate.getDate(),
+      month:todoDate.getMonth()+1,
+      year:todoDate.getFullYear()
+    }  // Include creation date
+  };
+  todoList.push(newItem);
+  saveTodoList(todoList);
+};
+
+const deleteTodoItem = (itemId) => {
+  const todoList = getTodoList();
+  const updatedList = todoList.filter(item => item.id !== itemId);
+  saveTodoList(updatedList);
+}
+
+const initializeTodoList = () => {
+  const todoList = getTodoList();
+  // let day = todoItem?.date?.day;
+  // let month = todoItem?.date?.month;
+  // let year = todoItem?.date?.year;
+  todoList.forEach( todoItem => {
+    addTask(todoItem.text)
+    console.log(todoItem)
+  });
+};
+
+window.addEventListener('load', initializeTodoList);
