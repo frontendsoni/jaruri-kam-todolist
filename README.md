@@ -6,7 +6,6 @@ Features:
 - The main feature is that your work will be there even if you refresh your page.
 - Simple and intuitive design
 - Add, update, and delete tasks
-- Give priority and category to the tasks
 - Add date and description to the task
 - Mark tasks as completed
 - Responsive layout for seamless usage on various devices
