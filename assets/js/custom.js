@@ -90,6 +90,7 @@
 
       const targetListItem = event.target.closest('li');
       const taskContent = targetListItem.querySelector('p');
+
       const inputElem = document.createElement('input');
       inputElem.type = 'text';
       inputElem.className = 'edit_task_text';
@@ -106,6 +107,8 @@
     if (event.target.classList.contains('edit_done_btn')) {
 
       const targetListItem = event.target.closest('li');
+      const checkBox = targetListItem.querySelector('.checkbox');
+
       const taskInput = targetListItem.querySelector('input');
       const newText = taskInput.value;
       const listItem = event.target.closest('li');
@@ -120,6 +123,14 @@
       const deleteIcon = document.createElement('i')
       deleteIcon.className = 'fa-solid fa-pencil edit_task_btn';
       editDoneIcon.replaceWith(deleteIcon);
+
+      
+      if( checkBox.classList.contains('tick')) {
+        checkBox.classList.remove('tick');
+      }
+
+      updateTask();
+      displayTask();
     }
 
   });
@@ -188,8 +199,6 @@
     todoList[itemIndex].completed = !todoList[itemIndex].completed;
     saveTodoList(todoList);
     }
-
-
 
   const initializeTodoList = () => {
     const todoList = getTodoList();

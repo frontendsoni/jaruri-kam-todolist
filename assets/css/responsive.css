@@ -19,18 +19,18 @@
   .task_list li {
     padding: 8px;
   }
-  .update_content i {
+  /* .update_content i {
     font-size: 13px;
     margin-left: 4px;
-  }
+  } */
   .task_date {
-    margin-left: 5px;
+    display: none;
   }
-  .todo_content p {
+  /* .todo_content p {
     font-size: 13px;
+  } */
+  .edit_task_text {
+    flex: unset;
   }
 }
 
-@media screen and (max-width:321px) {
-
-}
