@@ -131,6 +131,7 @@
 
       updateTask();
       displayTask();
+      completeTodoListText(itemId);
     }
 
   });
